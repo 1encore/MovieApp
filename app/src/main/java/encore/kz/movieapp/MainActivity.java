@@ -31,9 +31,11 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.OnM
         progressDialog = new ProgressDialog(this);
 
         recyclerView = (RecyclerView) findViewById(R.id.content);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
 
+        Prefs.putString("test", "Hi");
 
+        Log.d("n17r!", Prefs.getString("test", ""));
 
         progressDialog.show();
         PrefsApplication.get().getApi().getMovies().enqueue(new Callback<MovieWrapper>() {

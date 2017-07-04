@@ -37,7 +37,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieItemV
         final Movie movie = items.get(position);
 
         Glide.with(holder.imgCover.getContext())
-                .load("http://image.tmdb.org/t/p/w185" + movie.getPosterPath())
+                .load("http://image.tmdb.org/t/p/w342" + movie.getPosterPath())
                 .into(holder.imgCover);
         holder.view.setOnClickListener(new View.OnClickListener(){
             @Override
